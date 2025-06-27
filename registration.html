@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vehicle Exchange Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 30px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      background: #333;
+      color: white;
+      padding: 10px;
+      margin: -30px -30px 20px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="date"],
+    input[type="number"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .row .form-group {
+      flex: 1 1 45%;
+    }
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+    }
+    button {
+      padding: 12px 25px;
+      background: #77c4a5;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #60b290;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Application - Page 1 of 1</h2>
+    <form id="vehicleForm" onsubmit="handleSubmit(event)">
+      <div class="row">
+        <div class="form-group">
+          <label for="county">County: *</label>
+          <input type="text" id="county" name="county" placeholder="Enter county" required>
+        </div>
+        <div class="form-group">
+          <label for="state">State: *</label>
+          <input type="text" id="state" name="state" placeholder="Enter state" required>
+        </div>
+        <div class="form-group">
+          <label for="monthDay">Month and Day: *</label>
+          <input type="text" id="monthDay" name="monthDay" placeholder="e.g. May 10th" required>
+        </div>
+         <!-- Email -->
+        <div class="form-group">
+            <label for="email">Buyer Email: *</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+            <label for="phone">Buyer Phone Number: *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1-123-456-7890" pattern="^\+?\d{10,15}$" required>
+
+        </div>
+        <div class="form-group">
+          <label for="buyerName">Buyer Name: *</label>
+          <input type="text" id="buyerName" name="buyerName" required>
+        </div>
+        <div class="form-group">
+          <label for="buyerAddress">Buyer Address: *</label>
+          <input type="text" id="buyerAddress" name="buyerAddress" required>
+        </div>
+        <div class="form-group">
+          <label for="sellerName">Seller Name: *</label>
+          <input type="text" id="sellerName" name="sellerName" required>
+        </div>
+        <div class="form-group">
+          <label for="sellerAddress">Seller Address: *</label>
+          <input type="text" id="sellerAddress" name="sellerAddress" required>
+        </div>
+        <div class="form-group">
+          <label for="vehicleMake">Vehicle Make: *</label>
+          <input type="text" id="vehicleMake" name="vehicleMake" required>
+        </div>
+        <div class="form-group">
+          <label for="bodyType">Body Type: *</label>
+          <input type="text" id="bodyType" name="bodyType" placeholder="Car / Truck / Sedan / Coupe / etc" required>
+        </div>
+        <div class="form-group">
+          <label for="vehicleYear">Vehicle Year: *</label>
+          <input type="number" id="vehicleYear" name="vehicleYear" required>
+        </div>
+        <div class="form-group">
+          <label for="vehicleColor">Vehicle Color: *</label>
+          <input type="text" id="vehicleColor" name="vehicleColor" required>
+        </div>
+      </div>
+      <!-- Dropdown: Vehicle Type -->
+      <div class="form-group">
+        <label for="vehicleType">Vehicle Type: *</label>
+        <select id="vehicleType" name="vehicleType" required>
+          <option value="">-- Select a type --</option>
+          <option value="sedan">Sedan</option>
+          <option value="suv">SUV</option>
+          <option value="truck">Truck</option>
+          <option value="coupe">Coupe</option>
+          <option value="van">Van</option>
+        </select>
+      </div>
+
+      <!-- Checkboxes: Exchange Options -->
+      <div class="form-group">
+        <label>Exchange Options: *</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="exchangeOption" value="Cash"> Cash Payment</label>
+          <label><input type="checkbox" name="exchangeOption" value="Trade"> Vehicle Trade</label>
+        </div>
+      </div>
+      <!-- Image Upload -->
+      <div class="form-group">
+        <label for="vehicleImage">Upload Vehicle Image (PNG/JPG): *</label>
+        <input type="file" id="vehicleImage" name="vehicleImage" accept=".png, .jpg, .jpeg" required>
+      </div>
+
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <script>
+  function handleSubmit(e) {
+    e.preventDefault(); // Prevent form refresh
+    // window.location.href = "http://diy.eliteswebsolutions.com/";
+  }
+</script>
+</body>
+</html>
